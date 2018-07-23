@@ -7,7 +7,7 @@ import cv2
 from sklearn.utils import shuffle
 
 
-path = './data/gesture/'
+path = './gesture/'
 
 
 gestures = os.listdir(path)
