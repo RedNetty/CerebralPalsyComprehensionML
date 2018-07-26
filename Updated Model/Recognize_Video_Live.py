@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from keras.models import load_model
 import sys
+import subprocess
 
 
 windowName = "Video Input" # window name
@@ -47,6 +48,8 @@ old_pred_text = ""
 pred_text = ""
 count_frames = 0
 tot_string = ""
+old_pred_display_text = ""
+muted = True
 
 while (vc.isOpened()):
     rval, frame = vc.read()
@@ -71,6 +74,11 @@ while (vc.isOpened()):
         if count_frames > 10 and pred_text != "":
             tot_string = fullText
             count_frames = 0
+            if (pred_text != old_pred_display_text):
+                print(pred_text)
+                if not muted:
+                    subprocess.Popen(["espeak",pred_text])
+            old_pred_display_text = pred_text
 
         cv2.putText(frame, "Predicted intent - {0}".format(pred_text), (0, 25), cv2.FONT_HERSHEY_DUPLEX, 1, (102, 0, 51), 3)
         cv2.putText(frame, tot_string, (0, 45), cv2.FONT_HERSHEY_DUPLEX, 0.5, (102, 0, 51), 2)
@@ -83,6 +91,9 @@ while (vc.isOpened()):
     keypress = cv2.waitKey(1)
     if keypress == ord('q'):
         break
+    elif keypress == ord('m'):
+        muted = not muted
+
     if rval == False:
         break
 
