@@ -60,6 +60,13 @@ cd CerebralPalsyComprehensionML
 pip install tensorflow opencv-python dlib numpy scikit-learn matplotlib seaborn pyautogui pandas
 ```
 
+### Model Weights
+
+**Pre-trained model weights are not included in this repository** (binary `.h5` files are excluded from version control due to size). To get started, you must either:
+
+- **Train from scratch** using the steps below, or
+- **Download pre-trained weights** (if made available via GitHub Releases) and place them at the paths expected by the scripts (`Hand_Gesture_Recognize.h5` and `Updated Model/Gesture_Model.h5`)
+
 ### Training the Model
 
 1. Organize your gesture images into folders by class number:
@@ -111,7 +118,7 @@ Requires `shape_predictor_68_face_landmarks.dat` in the `mouth_recognition/` dir
 ├── Gesture_Train.py               # CNN training pipeline
 ├── Image_Capture_Static.py        # Static image capture utility
 ├── Recognize_Gesture2.py          # Alternative recognition script
-├── Hand_Gesture_Recognize.h5      # Pre-trained model weights
+├── Hand_Gesture_Recognize.h5      # Pre-trained model weights (not tracked — train locally or download separately)
 ├── mouth_recognition/
 │   ├── Mouth_Detection.py         # Facial landmark + mouth detection
 │   ├── haarcascade_frontalface_alt2.xml

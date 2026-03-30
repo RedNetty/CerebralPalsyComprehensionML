@@ -28,6 +28,14 @@ training_output_*/
 # Jupyter
 *.ipynb
 
+# Office documents (not appropriate for source control)
+*.xlsx
+*.pptx
+*.docx
+*.xls
+*.ppt
+*.doc
+
 # LibreOffice / Office temp files
 .~lock.*
 ~$*
