@@ -1,1 +1,48 @@
+# Gesture training data (large dataset)
 gesture/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+.venv
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Trained model files (use releases for model distribution)
+*.h5
+*.pkl
+*.pt
+*.pth
+training_output_*/
+
+# Jupyter
+*.ipynb
+
+# LibreOffice / Office temp files
+.~lock.*
+~$*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.iml
